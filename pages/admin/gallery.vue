@@ -1,69 +1,3 @@
-<template>
-  <div class="container">
-    <div class="kiri">
-      <div class="form">
-        <form @submit.prevent="uploadImage">
-          <div class="form-group">
-            <label>File</label>
-            <input type="file" @change="handleFileInput" class="input-file" />
-          </div>
-
-          <div class="form-group">
-            <label>Kategori</label>
-            <select v-model="form.kategori" class="input-select">
-              <option value="">Pilih ketegori</option>
-              <option value="prewed">Prewedding</option>
-              <option value="wedding">Wedding</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>Ukuran</label>
-            <select v-model="form.ukuran" class="input-select">
-              <option value="">Pilih Ukuran</option>
-              <option value="hor">Horizontal</option>
-              <option value="ver">Vertical</option>
-            </select>
-          </div>
-          <button type="submit" class="btn-submit">Upload Foto</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="kanan">
-      <div class="gallery">
-        <div class="column prewedding-horizontal">
-          <div v-for="(image, index) in prewedhor" :key="index" class="img img-hor">
-            <img :src="image.img" alt="Prewedding Horizontal" />
-            <button class="overlay-button" @click="hapusFoto(image.id)">Hapus</button>
-          </div>
-        </div>
-
-        <div class="column prewedding-vertical">
-          <div v-for="(image, index) in prewedver" :key="index" class="img img-ver">
-            <img :src="image.img" alt="Prewedding Vertical" />
-            <button class="overlay-button" @click="hapusFoto(image.id)">Hapus</button>
-          </div>
-        </div>
-
-        <div class="column wedding-vertical">
-          <div v-for="(image, index) in weddingver" :key="index" class="img img-ver">
-            <img :src="image.img" alt="Wedding Vertical" />
-            <button class="overlay-button" @click="hapusFoto(image.id)">Hapus</button>
-          </div>
-        </div>
-
-        <div class="column wedding-horizontal">
-          <div v-for="(image, index) in weddinghor" :key="index" class="img img-hor">
-            <img :src="image.img" alt="Wedding Horizontal" />
-            <button class="overlay-button" @click="hapusFoto(image.id)">Hapus</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
 definePageMeta({
   layout: "admin",
@@ -150,6 +84,72 @@ onMounted(() => {
 });
 </script>
 
+<template>
+  <div class="container">
+    <div class="kiri">
+      <div class="form">
+        <form @submit.prevent="uploadImage">
+          <div class="form-group">
+            <label>File</label>
+            <input type="file" @change="handleFileInput" class="input-file" />
+          </div>
+
+          <div class="form-group">
+            <label>Kategori</label>
+            <select v-model="form.kategori" class="input-select">
+              <option value="">Pilih ketegori</option>
+              <option value="prewed">Prewedding</option>
+              <option value="wedding">Wedding</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Ukuran</label>
+            <select v-model="form.ukuran" class="input-select">
+              <option value="">Pilih Ukuran</option>
+              <option value="hor">Horizontal</option>
+              <option value="ver">Vertical</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Upload Foto</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="kanan">
+      <div class="gallery">
+        <div class="column prewedding-horizontal">
+          <div v-for="(image, index) in prewedhor" :key="index" class="img img-hor">
+            <img :src="image.img" alt="Prewedding Horizontal" />
+            <button class="overlay-button" @click="hapusFoto(image.id)">Hapus</button>
+          </div>
+        </div>
+
+        <div class="column prewedding-vertical">
+          <div v-for="(image, index) in prewedver" :key="index" class="img img-ver">
+            <img :src="image.img" alt="Prewedding Vertical" />
+            <button class="overlay-button" @click="hapusFoto(image.id)">Hapus</button>
+          </div>
+        </div>
+
+        <div class="column wedding-vertical">
+          <div v-for="(image, index) in weddingver" :key="index" class="img img-ver">
+            <img :src="image.img" alt="Wedding Vertical" />
+            <button class="overlay-button" @click="hapusFoto(image.id)">Hapus</button>
+          </div>
+        </div>
+
+        <div class="column wedding-horizontal">
+          <div v-for="(image, index) in weddinghor" :key="index" class="img img-hor">
+            <img :src="image.img" alt="Wedding Horizontal" />
+            <button class="overlay-button" @click="hapusFoto(image.id)">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
 <style scoped>
 .overlay-button {
   position: absolute;
@@ -185,7 +185,6 @@ onMounted(() => {
   height: calc(40.8vh);
 }
 
-
 .container {
   display: grid;
   height: 100vh;
@@ -212,6 +211,7 @@ onMounted(() => {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   height: 90vh;
+  width: 60vw;
 }
 
 ::-webkit-scrollbar {

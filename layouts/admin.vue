@@ -47,9 +47,10 @@
   top: 0;
   left: 0;
   width: 250px;
+  overflow: hidden;
 }
 
-.logo>img {
+.logo > img {
   width: 80px;
 }
 

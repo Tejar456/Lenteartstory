@@ -1,3 +1,115 @@
+<script setup>
+definePageMeta({
+  layout: "admin",
+  middleware: "auth",
+});
+const supabase = useSupabaseClient();
+const kategori = ref([]);
+const engagement = ref([]);
+const prewedding = ref([]);
+const wedding = ref([]);
+const spesial = ref([]);
+const video = ref([]);
+const Maternity = ref([]);
+const PrewedStudio = ref([]);
+const Wisuda = ref([]);
+const Group = ref([]);
+const form = ref({
+  judul: "",
+  tier: "",
+  package: "",
+  price: "",
+  benefit: "",
+  output: "",
+});
+
+const tambahPackage = async () => {
+  const { error } = await supabase.from("package").insert([form.value]);
+  console.log(form.value);
+  if (!error) window.location.reload();
+};
+
+const getKategori = async () => {
+  const { data, error } = await supabase.from("kategori").select("*");
+  if (data) kategori.value = data;
+};
+
+// get Pricelist
+const getEngagement = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Engagement");
+  if (data) engagement.value = data;
+};
+const getPrewedding = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Prewedding");
+  if (data) prewedding.value = data;
+};
+const getWedding = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Wedding");
+  if (data) wedding.value = data;
+};
+const getSpesial = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Spesial");
+  if (data) spesial.value = data;
+};
+const getVideo = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Video");
+  if (data) video.value = data;
+};
+const getMaternity = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Maternity");
+  if (data) Maternity.value = data;
+};
+const getPrewedStudio = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "PreweddingStudio");
+  if (data) PrewedStudio.value = data;
+};
+const getWisuda = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Wisuda/Keluarga");
+  if (data) Wisuda.value = data;
+};
+const getGroup = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Group");
+  if (data) Group.value = data;
+};
+
+onMounted(() => {
+  getKategori();
+  getEngagement();
+  getPrewedding();
+  getWedding();
+  getSpesial();
+  getVideo();
+  getMaternity();
+  getPrewedStudio();
+  getWisuda();
+  getGroup();
+});
+
+const Update = async (id) => {
+  const newPrice = prompt("Masukkan harga baru:");
+
+  if (newPrice && !isNaN(newPrice)) {
+    const { data, error } = await supabase.from("package").update({ price: newPrice }).eq("id", id);
+
+    if (error) {
+      alert("Terjadi kesalahan saat memperbarui data: " + error.message);
+    } else {
+      alert("Harga berhasil diperbarui!");
+      getData();
+    }
+  } else {
+    alert("Harga tidak valid.");
+  }
+};
+
+const hapusPackage = async (packageId) => {
+  const { error } = await supabase.from("package").delete().eq("id", packageId);
+  if (!error) {
+    window.location.reload();
+  }
+};
+</script>
+
 <template>
   <div class="container">
     <div class="kiri">
@@ -260,119 +372,6 @@
   </div>
 </template>
 
-<script setup>
-definePageMeta({
-  layout: "admin",
-  middleware: "auth",
-});
-const supabase = useSupabaseClient();
-const kategori = ref([]);
-const engagement = ref([]);
-const prewedding = ref([]);
-const wedding = ref([]);
-const spesial = ref([]);
-const video = ref([]);
-const Maternity = ref([]);
-const PrewedStudio = ref([]);
-const Wisuda = ref([]);
-const Group = ref([]);
-const form = ref({
-  judul: "",
-  tier: "",
-  package: "",
-  price: "",
-  benefit: "",
-  output: "",
-});
-
-const tambahPackage = async () => {
-  const { error } = await supabase.from("package").insert([form.value]);
-  console.log(form.value);
-  if (!error) window.location.reload();
-};
-
-const getKategori = async () => {
-  const { data, error } = await supabase.from("kategori").select("*");
-  if (data) kategori.value = data;
-};
-
-// get Pricelist
-const getEngagement = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Engagement");
-  if (data) engagement.value = data;
-};
-const getPrewedding = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Prewedding");
-  if (data) prewedding.value = data;
-};
-const getWedding = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Wedding");
-  if (data) wedding.value = data;
-};
-const getSpesial = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Spesial");
-  if (data) spesial.value = data;
-};
-const getVideo = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Video");
-  if (data) video.value = data;
-};
-const getMaternity = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Maternity");
-  if (data) Maternity.value = data;
-};
-const getPrewedStudio = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "PreweddingStudio");
-  if (data) PrewedStudio.value = data;
-};
-const getWisuda = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Wisuda/Keluarga");
-  if (data) Wisuda.value = data;
-};
-const getGroup = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Group");
-  if (data) Group.value = data;
-};
-
-onMounted(() => {
-  getKategori();
-  getEngagement();
-  getPrewedding();
-  getWedding();
-  getSpesial();
-  getVideo();
-  getMaternity();
-  getPrewedStudio();
-  getWisuda();
-  getGroup();
-});
-
-const Update = async (id) => {
-  const newPrice = prompt("Masukkan harga baru:");
-
-  if (newPrice && !isNaN(newPrice)) {
-    const { data, error } = await supabase.from("package").update({ price: newPrice }).eq("id", id);
-
-    if (error) {
-      alert("Terjadi kesalahan saat memperbarui data: " + error.message);
-    } else {
-      alert("Harga berhasil diperbarui!");
-      getData();
-    }
-  } else {
-    alert("Harga tidak valid.");
-  }
-};
-
-const hapusPackage = async (packageId) => {
-  const { error } = await supabase.from("package").delete().eq("id", packageId);
-  if (!error) {
-    window.location.reload();
-  }
-};
-
-</script>
-
 <style scoped>
 .container {
   display: grid;
@@ -400,6 +399,7 @@ const hapusPackage = async (packageId) => {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   height: 90vh;
+  width: 60vw;
 }
 
 ::-webkit-scrollbar {
@@ -460,7 +460,7 @@ label {
   color: #000;
 }
 
-.judul>h1 {
+.judul > h1 {
   text-align: center;
   margin-top: 100px;
 }
@@ -512,14 +512,14 @@ label {
   flex-grow: 1;
 }
 
-.title>p,
-.price>p {
+.title > p,
+.price > p {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.price>p {
+.price > p {
   font-size: 1.3em;
 }
 
@@ -529,11 +529,10 @@ label {
 }
 
 .benefit,
-.output>p {
+.output > p {
   line-height: 1.5em;
   white-space: pre-line;
 }
-
 
 button {
   background-color: #dfdfdf;

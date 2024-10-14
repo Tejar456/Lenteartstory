@@ -1,3 +1,49 @@
+<script>
+export default {
+  data() {
+    return {
+      isScrolled: false,
+      menuOpen: false,
+    };
+  },
+  mounted() {
+    this.showSlides();
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    showSlides() {
+      let slideIndex = 0;
+      const slides = document.getElementsByClassName("slide");
+      setInterval(() => {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }, 2000);
+    },
+
+    handleScroll() {
+      this.isScrolled = window.scrollY > 50;
+    },
+
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen;
+      const hamburger = document.getElementById("hamburger");
+      if (hamburger) {
+        hamburger.classList.toggle("menuOpen", this.menuOpen);
+      }
+    },
+  },
+};
+</script>
+
 <template>
   <div class="container">
     <header>
@@ -83,52 +129,6 @@
     </footer>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      isScrolled: false,
-      menuOpen: false,
-    };
-  },
-  mounted() {
-    this.showSlides();
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    showSlides() {
-      let slideIndex = 0;
-      const slides = document.getElementsByClassName("slide");
-      setInterval(() => {
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-        slides[slideIndex - 1].style.display = "block";
-      }, 2000);
-    },
-
-    handleScroll() {
-      this.isScrolled = window.scrollY > 50;
-    },
-
-    toggleMenu() {
-      this.menuOpen = !this.menuOpen;
-      const hamburger = document.getElementById("hamburger");
-      if (hamburger) {
-        hamburger.classList.toggle("menuOpen", this.menuOpen);
-      }
-    },
-  },
-};
-</script>
 
 <style>
 * {

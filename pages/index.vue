@@ -1,62 +1,7 @@
-<template>
-  <div>
-    <section id="home">
-      <div class="slideshow-container">
-        <div v-for="(image, index) in images" :key="index" class="foto">
-          <div class="slide fade">
-            <img :src="image.img" alt="Image" class="image" style="width: 100%" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" data-aos="zoom-in">
-      <div class="logo">
-        <img src="~/assets/logo.png" alt="Lenteart" />
-      </div>
-      <p>
-        Setiap detik cerita rasa yang berbeda, semua di satukan dalam sebuah cerita yang indah. "Kami ingin membantu kalian untuk menceritakan setiap cerita yang kalian miliki. kami siap untuk berbagi kegembiran dan emosi dengan kalian,
-        dalam bingkai yang indah, yang akan kita satukan dalam sebuah cerita yang tidak akan terganti dan akan di ingat selamanya”
-      </p>
-    </section>
-
-    <section id="gallery">
-      <div class="gallery">
-        <div class="column prewedding-horizontal">
-          <div v-for="(image, index) in prewedhor" :key="index" class="img img-hor">
-            <img :src="image.img" alt="Prewedding Horizontal" data-aos="zoom-in" />
-          </div>
-        </div>
-
-        <div class="column prewedding-vertical">
-          <div v-for="(image, index) in prewedver" :key="index" class="img img-ver">
-            <img :src="image.img" alt="Prewedding Vertical" data-aos="zoom-in" />
-          </div>
-        </div>
-
-        <div class="column wedding-vertical">
-          <div v-for="(image, index) in weddingver" :key="index" class="img img-ver">
-            <img :src="image.img" alt="Wedding Vertical" data-aos="zoom-in" />
-          </div>
-        </div>
-
-        <div class="column wedding-horizontal">
-          <div v-for="(image, index) in weddinghor" :key="index" class="img img-hor">
-            <img :src="image.img" alt="Wedding Horizontal" data-aos="zoom-in" />
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="link">
-      <NuxtLink to="/gallery">See More Gallery</NuxtLink>
-    </div>
-  </div>
-</template>
-
 <script setup>
 definePageMeta({
-  title: 'Lente Home'
-})
+  title: "Lente Home",
+});
 const supabase = useSupabaseClient();
 const images = ref([]);
 const prewedver = ref([]);
@@ -110,15 +55,62 @@ onMounted(() => {
   weddingVer();
   weddingHor();
 });
-
-onMounted(() => {
-  AOS.init({
-    duration: 700,
-    easing: "ease-in-out",
-    once: true,
-  });
-});
 </script>
+
+<template>
+  <div>
+    <section id="home">
+      <div class="slideshow-container">
+        <div v-for="(image, index) in images" :key="index" class="foto">
+          <div class="slide fade">
+            <img :src="image.img" alt="Image" class="image" style="width: 100%" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="logo">
+        <img src="~/assets/logo.png" alt="Lenteart" />
+      </div>
+      <p>
+        Setiap detik cerita rasa yang berbeda, semua di satukan dalam sebuah cerita yang indah. "Kami ingin membantu kalian untuk menceritakan setiap cerita yang kalian miliki. kami siap untuk berbagi kegembiran dan emosi dengan kalian,
+        dalam bingkai yang indah, yang akan kita satukan dalam sebuah cerita yang tidak akan terganti dan akan di ingat selamanya”
+      </p>
+    </section>
+
+    <section id="gallery">
+      <div class="gallery">
+        <div class="column prewedding-horizontal">
+          <div v-for="(image, index) in prewedhor" :key="index" class="img img-hor">
+            <img :src="image.img" alt="Prewedding Horizontal" />
+          </div>
+        </div>
+
+        <div class="column prewedding-vertical">
+          <div v-for="(image, index) in prewedver" :key="index" class="img img-ver">
+            <img :src="image.img" alt="Prewedding Vertical" />
+          </div>
+        </div>
+
+        <div class="column wedding-vertical">
+          <div v-for="(image, index) in weddingver" :key="index" class="img img-ver">
+            <img :src="image.img" alt="Wedding Vertical" />
+          </div>
+        </div>
+
+        <div class="column wedding-horizontal">
+          <div v-for="(image, index) in weddinghor" :key="index" class="img img-hor">
+            <img :src="image.img" alt="Wedding Horizontal" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="link">
+      <NuxtLink to="/gallery">See More Gallery</NuxtLink>
+    </div>
+  </div>
+</template>
 
 <style>
 .slideshow-container {
@@ -184,8 +176,8 @@ onMounted(() => {
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 90px 20px 0px 20px;
-  grid-gap: 20px;
+  padding: 90px 0px 0px 0px;
+  grid-gap: 10px;
   width: 100%;
 }
 

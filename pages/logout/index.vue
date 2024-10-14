@@ -1,9 +1,3 @@
-<template>
-  <div>
-    <h1 class="logout">Logout</h1>
-  </div>
-</template>
-
 <script setup>
 const supabase = useSupabaseClient();
 
@@ -16,6 +10,12 @@ onMounted(() => {
   keluar();
 });
 </script>
+
+<template>
+  <div>
+    <h1 class="logout">Logout</h1>
+  </div>
+</template>
 
 <style scoped>
 .logout {

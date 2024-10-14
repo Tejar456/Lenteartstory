@@ -1,3 +1,65 @@
+<script setup>
+const supabase = useSupabaseClient();
+const engagement = ref([]);
+const prewedding = ref([]);
+const wedding = ref([]);
+const spesial = ref([]);
+const video = ref([]);
+const Maternity = ref([]);
+const PrewedStudio = ref([]);
+const Wisuda = ref([]);
+const Group = ref([]);
+
+const getEngagement = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Engagement");
+  if (data) engagement.value = data;
+};
+const getPrewedding = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Prewedding");
+  if (data) prewedding.value = data;
+};
+const getWedding = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Wedding");
+  if (data) wedding.value = data;
+};
+const getSpesial = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Spesial");
+  if (data) spesial.value = data;
+};
+const getVideo = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Video");
+  if (data) video.value = data;
+};
+const getMaternity = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Maternity");
+  if (data) Maternity.value = data;
+};
+const getPrewedStudio = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "PreweddingStudio");
+  if (data) PrewedStudio.value = data;
+};
+const getWisuda = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Wisuda/Keluarga");
+  if (data) Wisuda.value = data;
+};
+const getGroup = async () => {
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Group");
+  if (data) Group.value = data;
+};
+
+onMounted(() => {
+  getEngagement();
+  getPrewedding();
+  getWedding();
+  getSpesial();
+  getVideo();
+  getMaternity();
+  getPrewedStudio();
+  getWisuda();
+  getGroup();
+});
+</script>
+
 <template>
   <div class="container">
     <div class="pricelist">
@@ -134,8 +196,7 @@
     </div>
     <div class="note">
       <span> Noted :</span>
-      <p>Belum termasuk akomodasi ( diluar Kota Tasikmalaya, Ciamis kota ) Belum termasuk MUA, Wardrobe & Charge Lokasi
-      </p>
+      <p>Belum termasuk akomodasi ( diluar Kota Tasikmalaya, Ciamis kota ) Belum termasuk MUA, Wardrobe & Charge Lokasi</p>
     </div>
     <div class="pricelist">
       <h1>Maternity</h1>
@@ -229,78 +290,25 @@
         </div>
       </div>
     </div>
+    <div class="note">
+      <div class="keterangan">
+        <span>keterangan :</span>
+        <p>4R (10 x 15 cm) 10R (20 x 30 cm) 12RP (30 x 45 cm) 16RP (40 x 60 cm)</p>
+      </div>
+      <div class="keterangan">
+        <span>Catatan :</span>
+        <p>konsultasi terlebih dahulu mengenai konsep dan jenis outfit yg mau di pakai supaya hasilnya bagus</p>
+      </div>
+    </div>
   </div>
 </template>
-
-
-<script setup>
-const supabase = useSupabaseClient();
-const engagement = ref([]);
-const prewedding = ref([]);
-const wedding = ref([]);
-const spesial = ref([]);
-const video = ref([]);
-const Maternity = ref([]);
-const PrewedStudio = ref([]);
-const Wisuda = ref([]);
-const Group = ref([]);
-
-const getEngagement = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Engagement");
-  if (data) engagement.value = data;
-};
-const getPrewedding = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Prewedding");
-  if (data) prewedding.value = data;
-};
-const getWedding = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Wedding");
-  if (data) wedding.value = data;
-};
-const getSpesial = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Spesial");
-  if (data) spesial.value = data;
-};
-const getVideo = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Video");
-  if (data) video.value = data;
-};
-const getMaternity = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Maternity");
-  if (data) Maternity.value = data;
-};
-const getPrewedStudio = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "PreweddingStudio");
-  if (data) PrewedStudio.value = data;
-};
-const getWisuda = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Wisuda/Keluarga");
-  if (data) Wisuda.value = data;
-};
-const getGroup = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Group");
-  if (data) Group.value = data;
-};
-
-onMounted(() => {
-  getEngagement();
-  getPrewedding();
-  getWedding();
-  getSpesial();
-  getVideo();
-  getMaternity();
-  getPrewedStudio();
-  getWisuda();
-  getGroup();
-});
-</script>
 
 <style scoped>
 .container {
   margin-top: 100px;
 }
 
-.pricelist>h1 {
+.pricelist > h1 {
   text-align: center;
 }
 
@@ -341,14 +349,14 @@ onMounted(() => {
   flex-grow: 1;
 }
 
-.title>p,
-.price>p {
+.title > p,
+.price > p {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.price>p {
+.price > p {
   font-size: 1.3em;
 }
 
@@ -358,7 +366,7 @@ onMounted(() => {
 }
 
 .benefit,
-.output>p {
+.output > p {
   line-height: 1.5em;
   white-space: pre-line;
 }
@@ -400,6 +408,10 @@ button:active {
   padding: 20px;
 }
 
+.keterangan {
+  margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -410,8 +422,8 @@ button:active {
     padding: 15px;
   }
 
-  .title>p,
-  .price>p {
+  .title > p,
+  .price > p {
     font-size: 1.2em;
   }
 

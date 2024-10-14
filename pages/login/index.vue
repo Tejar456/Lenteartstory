@@ -1,21 +1,3 @@
-<template>
-  <div class="container">
-    <div class="Login">
-      <img src="~/assets/logo.png" alt="lenteart" class="logo" />
-      <form @submit.prevent="Login">
-        <h3>Login</h3>
-        <label for="email">Email</label>
-        <input v-model="email" type="email" placeholder="Email" />
-
-        <label for="password">Password</label>
-        <input v-model="password" type="password" placeholder="Password" />
-
-        <button>LogIn</button>
-      </form>
-    </div>
-  </div>
-</template>
-
 <script setup>
 definePageMeta({
   layout: "login",
@@ -36,6 +18,24 @@ const Login = async () => {
   if (error) console.log("error");
 };
 </script>
+
+<template>
+  <div class="container">
+    <div class="Login">
+      <img src="~/assets/logo.png" alt="lenteart" class="logo" />
+      <form @submit.prevent="Login">
+        <h3>Login</h3>
+        <label for="email">Email</label>
+        <input v-model="email" type="email" placeholder="Email" />
+
+        <label for="password">Password</label>
+        <input v-model="password" type="password" placeholder="Password" />
+
+        <button>LogIn</button>
+      </form>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 * {
