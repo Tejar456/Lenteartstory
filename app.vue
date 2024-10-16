@@ -1,10 +1,15 @@
 <template>
     <div lang="id">
-        <NuxtPage />
+        <NuxtLayout>
+            <NuxtPage />
+        </NuxtLayout>
     </div>
 </template>
 
 <script setup>
+definePageMeta({
+  layout: "default",
+});
 useHead({
     titleTemplate: (titleChunk) => {
         return titleChunk ? `${titleChunk} - Lenteartstory` : 'Lenteartstory - Jasa Fotografi Dan Studio Foto Tasikmalaya'
