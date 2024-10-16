@@ -70,13 +70,12 @@
 }
 
 .container {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 90px 20px 0px 20px;
   grid-gap: 20px;
   width: 100%;
 }
@@ -109,7 +108,6 @@
   .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 40px 20px 0px 20px;
     grid-gap: 20px;
     width: 100%;
   }

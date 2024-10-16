@@ -405,7 +405,6 @@ button:active {
 .note {
   width: 100%;
   text-align: center;
-  padding: 20px;
 }
 
 .keterangan {
@@ -414,7 +413,7 @@ button:active {
 
 @media (max-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: auto auto;
     gap: 10px;
   }
 
@@ -430,6 +429,12 @@ button:active {
   button {
     padding: 8px;
     font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: auto;
+    gap: 10px;
   }
 }
 </style>

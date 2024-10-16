@@ -13,6 +13,6 @@
 </template>
 <script setup>
 definePageMeta({
-  title: 'Lente Pricelist'
-})
+  title: "Lente Pricelist",
+});
 </script>

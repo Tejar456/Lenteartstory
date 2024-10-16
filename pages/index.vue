@@ -135,7 +135,7 @@ onMounted(() => {
 }
 
 #about {
-  padding: 0 50px;
+  /* padding: 0 50px; */
   padding-bottom: 100px;
   display: flex;
   justify-content: center;
@@ -176,7 +176,6 @@ onMounted(() => {
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 90px 0px 0px 0px;
   grid-gap: 10px;
   width: 100%;
 }
@@ -255,7 +254,6 @@ onMounted(() => {
   .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 40px 20px 0px 20px;
     grid-gap: 20px;
     width: 100%;
   }
