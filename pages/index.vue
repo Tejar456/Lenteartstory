@@ -1,6 +1,6 @@
 <script setup>
 definePageMeta({
-  title: "Lente Home",
+  title: "Home",
 });
 const supabase = useSupabaseClient();
 const images = ref([]);
@@ -71,7 +71,7 @@ onMounted(() => {
 
     <section id="about">
       <div class="logo">
-        <img src="~/assets/logo.png" alt="Lenteart" />
+        <img src="~/assets/logo.webp" alt="Lenteartstory" />
       </div>
       <p>
         Setiap detik cerita rasa yang berbeda, semua di satukan dalam sebuah cerita yang indah. "Kami ingin membantu kalian untuk menceritakan setiap cerita yang kalian miliki. kami siap untuk berbagi kegembiran dan emosi dengan kalian,

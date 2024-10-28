@@ -11,39 +11,39 @@ const Wisuda = ref([]);
 const Group = ref([]);
 
 const getEngagement = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Engagement").order('id', { ascending: true });
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Engagement").order("id", { ascending: true });
   if (data) engagement.value = data;
 };
 const getPrewedding = async () => {
-  const { data } = await supabase.from("package").select(`*, kategori(*)`).eq("package", "Prewedding").order('id', { ascending: true });
+  const { data } = await supabase.from("package").select(`*, kategori(*)`).eq("package", "Prewedding").order("id", { ascending: true });
   if (data) prewedding.value = data;
 };
 const getWedding = async () => {
-  const { data } = await supabase.from("package").select(`*, kategori(*)`).eq("package", "Wedding").order('id', { ascending: true });
+  const { data } = await supabase.from("package").select(`*, kategori(*)`).eq("package", "Wedding").order("id", { ascending: true });
   if (data) wedding.value = data;
 };
 const getSpesial = async () => {
-  const { data } = await supabase.from("package").select(`*, kategori(*)`).eq("package", "Spesial").order('id', { ascending: true });
+  const { data } = await supabase.from("package").select(`*, kategori(*)`).eq("package", "Spesial").order("id", { ascending: true });
   if (data) spesial.value = data;
 };
 const getVideo = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Video").order('id', { ascending: true });
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Video").order("id", { ascending: true });
   if (data) video.value = data;
 };
 const getMaternity = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Maternity").order('id', { ascending: true });
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Maternity").order("id", { ascending: true });
   if (data) Maternity.value = data;
 };
 const getPrewedStudio = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "PreweddingStudio").order('id', { ascending: true });
+  const { data } = await supabase.from("package").select(`*`).eq("package", "PreweddingStudio").order("id", { ascending: true });
   if (data) PrewedStudio.value = data;
 };
 const getWisuda = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Wisuda/Keluarga").order('id', { ascending: true });
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Wisuda/Keluarga").order("id", { ascending: true });
   if (data) Wisuda.value = data;
 };
 const getGroup = async () => {
-  const { data } = await supabase.from("package").select(`*`).eq("package", "Group").order('id', { ascending: true });
+  const { data } = await supabase.from("package").select(`*`).eq("package", "Group").order("id", { ascending: true });
   if (data) Group.value = data;
 };
 
@@ -79,8 +79,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a
-              href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -106,8 +105,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a
-              href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -137,8 +135,7 @@ onMounted(() => {
                 <p>{{ list.output }}</p>
               </div>
             </div>
-            <a
-              href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -168,8 +165,7 @@ onMounted(() => {
                 <p>{{ list.output }}</p>
               </div>
             </div>
-            <a
-              href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -199,8 +195,7 @@ onMounted(() => {
                 <p>{{ list.output }}</p>
               </div>
             </div>
-            <a
-              href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -211,8 +206,7 @@ onMounted(() => {
     </div>
     <div class="note">
       <span> Noted :</span>
-      <p>Belum termasuk akomodasi ( diluar Kota Tasikmalaya, Ciamis kota ) Belum termasuk MUA, Wardrobe & Charge Lokasi
-      </p>
+      <p>Belum termasuk akomodasi ( diluar Kota Tasikmalaya, Ciamis kota ) Belum termasuk MUA, Wardrobe & Charge Lokasi</p>
     </div>
     <div class="pricelist">
       <h1>Maternity</h1>
@@ -230,8 +224,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a
-              href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -256,8 +249,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a
-              href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -282,8 +274,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a
-              href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -308,8 +299,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a
-              href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -336,8 +326,9 @@ onMounted(() => {
   margin-top: 100px;
 }
 
-.pricelist>h1 {
+.pricelist > h1 {
   text-align: center;
+  margin: 15px 0px 15px 0px;
 }
 
 .grid-container {
@@ -377,14 +368,14 @@ onMounted(() => {
   flex-grow: 1;
 }
 
-.title>p,
-.price>p {
+.title > p,
+.price > p {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.price>p {
+.price > p {
   font-size: 1.3em;
 }
 
@@ -394,7 +385,7 @@ onMounted(() => {
 }
 
 .benefit,
-.output>p {
+.output > p {
   line-height: 1.5em;
   white-space: pre-line;
 }
@@ -449,8 +440,8 @@ button:active {
     padding: 15px;
   }
 
-  .title>p,
-  .price>p {
+  .title > p,
+  .price > p {
     font-size: 1.2em;
   }
 

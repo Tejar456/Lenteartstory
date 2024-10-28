@@ -2,7 +2,7 @@
   <div class="container">
     <div class="sidebar">
       <div class="logo">
-        <img src="~/assets/logo.png" alt="Logo" />
+        <img src="~/assets/logo.webp" alt="Logo" />
       </div>
 
       <div class="navbar">
@@ -30,6 +30,11 @@
 </template>
 
 <style scoped>
+* {
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
 .container {
   background-color: #dfdfdf;
   display: grid;

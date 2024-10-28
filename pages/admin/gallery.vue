@@ -46,7 +46,7 @@ const uploadImage = async () => {
     alert("Foto berhasil diupload dan disimpan ke gallery!");
   } catch (error) {
     console.error("Error uploading file:", error.message);
-    alert("Gagal mengupload file.");
+    // alert("Gagal mengupload file.");
   }
 };
 
@@ -91,7 +91,7 @@ onMounted(() => {
         <form @submit.prevent="uploadImage">
           <div class="form-group">
             <label>File</label>
-            <input type="file" @change="handleFileInput" class="input-file" />
+            <input type="file" @change="handleFileInput" class="input-file" accept=".webp" />
           </div>
 
           <div class="form-group">
@@ -151,6 +151,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.kiri {
+  margin-right: 3.5rem;
+}
+
 .overlay-button {
   position: absolute;
   top: 10px;

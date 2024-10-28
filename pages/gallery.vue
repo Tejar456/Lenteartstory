@@ -5,6 +5,6 @@
 </template>
 <script setup>
 definePageMeta({
-  title: 'Lente Gallery'
-})
+  title: "Gallery",
+});
 </script>

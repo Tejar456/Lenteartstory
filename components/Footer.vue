@@ -1,5 +1,5 @@
 <template>
-<div>
+  <div>
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section footer-social">
@@ -52,7 +52,7 @@
         <p>&copy; 2024 Lenteart. All rights reserved.</p>
       </div>
     </footer>
-</div>
+  </div>
 </template>
 
 <style>

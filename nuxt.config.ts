@@ -12,6 +12,6 @@ export default defineNuxtConfig({
     keywords: ["fotografi", "prewedding", "wedding", "engagement", "maternity", "wisuda", "foto grup", "studio foto", "Lenteartstory"],
     canonical: "https://lenteartstory.vercel.app",
     isForcedTrailingSlash: false,
-    ogImage: "/assets/logo.png",
+    ogImage: "/assets/logo.webp",
   },
 });
