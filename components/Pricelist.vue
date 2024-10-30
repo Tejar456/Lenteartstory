@@ -79,7 +79,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking" class="link">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -105,7 +105,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking" class="link">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -135,7 +135,7 @@ onMounted(() => {
                 <p>{{ list.output }}</p>
               </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking" class="link">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -165,7 +165,7 @@ onMounted(() => {
                 <p>{{ list.output }}</p>
               </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking" class="link">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -195,7 +195,7 @@ onMounted(() => {
                 <p>{{ list.output }}</p>
               </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking" class="link">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -224,7 +224,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking" class="link">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -249,7 +249,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking" class="link">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -274,7 +274,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking" class="link">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -299,7 +299,7 @@ onMounted(() => {
                 <p>{{ list.benefit }}</p>
               </div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking">
+            <a href="https://api.whatsapp.com/send?phone=6287737422055&text=Hallo+Lenteartstory,+saya+ingin+menanyakan+perihal+info+booking" class="link">
               <div class="button-container">
                 <button>Book</button>
               </div>
@@ -390,10 +390,16 @@ onMounted(() => {
   white-space: pre-line;
 }
 
+.link {
+  text-decoration: none;
+  width: 100%;
+}
+
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  width: 100%;
+  /* margin-top: 20px; */
 }
 
 button {

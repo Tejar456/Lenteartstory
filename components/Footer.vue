@@ -6,7 +6,7 @@
           <h2>Media Sosial</h2>
           <ul>
             <li>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://instagram.com/lenteartstory" target="_blank" rel="noopener noreferrer"
                 ><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px">
                   <title>Instagram</title>
                   <path
@@ -23,7 +23,7 @@
           <h2>Kontak</h2>
           <ul>
             <li>
-              <a href="https://wa.me/+123456789" target="_blank" rel="noopener noreferrer">
+              <a href="https://api.whatsapp.com/send?phone=6287737422055" target="_blank" rel="noopener noreferrer">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px">
                   <title>WhatsApp</title>
                   <path
@@ -34,7 +34,7 @@
               </a>
             </li>
             <li>
-              <a href="mailto:info@example.com"
+              <a href="mailto:lenteartstory@gmail.com"
                 ><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px">
                   <title>Gmail</title>
                   <path
