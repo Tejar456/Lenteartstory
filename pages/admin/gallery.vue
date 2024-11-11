@@ -91,7 +91,7 @@ onMounted(() => {
         <form @submit.prevent="uploadImage">
           <div class="form-group">
             <label>File</label>
-            <input type="file" @change="handleFileInput" class="input-file" accept=".webp" />
+            <input type="file" @change="handleFileInput" class="input-file" />
           </div>
 
           <div class="form-group">
